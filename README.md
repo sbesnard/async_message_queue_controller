@@ -2,13 +2,19 @@
 
 A simple controller that processes a message payload queue asynchronously.
 
+Useful when needing to process asynchronously a series of messages with predefined payload type,
+and those processes should be sequential.
+
+For instance, manage several file uploads in a Flutter app, and be able to suspend the queue
+when the connectivity is lost.
+
 ## Usage
 
 A simple usage example:
 
 ```
-import 'package:AsyncMessageQueueController/AsyncMessageQueueProcessor.dart';
-
+import 'package:async_message_queue_controller/async_message_queue_controller.dart';
+import "dart:async";
 
 /// The callback used by the controller to "process" a message/payload
 /// Here the payload is a simple string, an simulates a heavy process
